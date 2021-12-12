@@ -1,10 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## After Cloning Down Assignment:
 
-
-## After Cloning Down Dynamic Form Render Assignment
-
-run `npm install` (with no arguments). "This command installs a package(.json) and any packages that it depends on."
-[npm install](https://docs.npmjs.com/cli/v8/commands/npm-install)
+run `npm install` with no arguments. "This command installs a package(.json) and any packages that it depends on." 
+For more information, go to [npm install](https://docs.npmjs.com/cli/v8/commands/npm-install)
 
 Run `npm start` to fire up the front end server. The browser will open automatically - however if you close it you can return to the page by going [here](http://localhost:3000).
 
@@ -13,6 +10,8 @@ Run `npm start` to fire up the front end server. The browser will open automatic
 Don't forget to fire up the back end server by running `python server.py`
 
 Credits: Thanks to [Code Like This](https://codelikethis.com/lessons/client-side-coding/local-storage) for their blog on creating a custom local storage hook! 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 <!--
