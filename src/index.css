@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main-div {
+  margin: 0 30px;
+}
+
+form {
+  padding: 20px;
+}
+
+fieldset {
+  margin: 15px;
+  padding: 10px;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="email"] {
+  margin: 5px;
+  padding: 1px;
 }
