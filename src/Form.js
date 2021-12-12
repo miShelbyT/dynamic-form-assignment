@@ -109,7 +109,17 @@ function Form() {
       </h4>
     )
   }
-  useEffect(() => {}, [email, firstName, middleName, lastName])
+  useEffect(() => {}, [
+    email,
+    firstName,
+    middleName,
+    lastName,
+    dob,
+    spouse,
+    spouseFirstName,
+    spouseMiddleName,
+    spouseLastName,
+  ])
 
   return (
     <form onSubmit={handleOnSubmit}>
@@ -119,38 +129,43 @@ function Form() {
       </h3>
       <fieldset>
         <legend>Applicant</legend>
-        <label>First Name: </label>
+        <label htmlFor="first-name">First Name: </label>
         <input
+          id="first-name"
           type="text"
           required
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-        <label>Middle Name: </label>
+        <label htmlFor="mid-name">Middle Name: </label>
         <input
+          id="mid-name"
           type="text"
           value={middleName}
           onChange={(e) => setMiddleName(e.target.value)}
         />
-        <label>Last Name: </label>
+        <label htmlFor="last-name">Last Name: </label>
         <input
+          id="last-name"
           type="text"
           required
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
-        <label>Date of Birth: </label>
+        <label htmlFor="dob">Date of Birth: </label>
         <input
+          id="dob"
           type="date"
           required
           value={dob}
           onChange={(e) => setDob(e.target.value)}
         />
 
-        {firstName === '' || lastName === '' || dob === '' ? null : (
+        {dob === '' ? null : (
           <fieldset>
-            <label>Email Address: </label>
+            <label htmlFor="email">Email Address: </label>
             <input
+              id="email"
               type="email"
               required
               value={email}
@@ -162,16 +177,18 @@ function Form() {
         {email === '' ? null : (
           <>
             <h3>Would You Like To Enroll A Spouse?</h3>
-            <label>Yes </label>
+            <label htmlFor="spouseYes">Yes </label>
             <input
+              id="spouseYes"
               type="radio"
               name="spouse"
               checked={spouse === 'Yes'}
               value="Yes"
               onChange={() => setSpouse('Yes')}
             />
-            <label>No </label>
+            <label htmlFor="spouseNo">No </label>
             <input
+              id="spouseNo"
               type="radio"
               name="spouse"
               checked={spouse === 'No'}
@@ -184,26 +201,30 @@ function Form() {
         {spouse === 'Yes' ? (
           <fieldset>
             <legend>Spouse</legend>
-            <label>First Name: </label>
+            <label htmlFor="spouseFirst">First Name: </label>
             <input
+              id="spouseFirst"
               type="text"
               value={spouseFirstName}
               onChange={(e) => setSpouseFirstName(e.target.value)}
             />
-            <label>Middle Name: </label>
+            <label htmlFor="spouseMid">Middle Name: </label>
             <input
+              id="spouseMid"
               type="text"
               value={spouseMiddleName}
               onChange={(e) => setSpouseMiddleName(e.target.value)}
             />
-            <label>Last Name: </label>
+            <label htmlFor="spouseLast">Last Name: </label>
             <input
+              id="spouseLast"
               type="text"
               value={spouseLastName}
               onChange={(e) => setSpouseLastName(e.target.value)}
             />
-            <label>Date of Birth: </label>
+            <label htmlFor="spouse-dob">Date of Birth: </label>
             <input
+              id="spouse-dob"
               type="date"
               value={spouseDob}
               onChange={(e) => setSpouseDob(e.target.value)}
@@ -211,22 +232,21 @@ function Form() {
           </fieldset>
         ) : null}
 
-        {spouse === 'No' ||
-        spouseFirstName !== '' ||
-        spouseLastName !== '' ||
-        spouseDob !== '' ? (
+        {spouse === 'No' || spouseDob !== '' ? (
           <>
             <h3>Do You Have Any Dependent Children?</h3>
-            <label>Yes </label>
+            <label htmlFor="children-yes">Yes </label>
             <input
+              id="children-yes"
               type="radio"
               name="children"
               checked={children === 'Yes'}
               value="Yes"
               onChange={() => setChildren('Yes')}
             />
-            <label>No </label>
+            <label htmlFor="children-no">No </label>
             <input
+              id="children-no"
               type="radio"
               name="children"
               checked={children === 'No'}
@@ -237,8 +257,9 @@ function Form() {
         ) : null}
         {children === 'Yes' ? (
           <fieldset>
-            <label>Number of Children: </label>
+            <label htmlFor="num-children">Number of Children: </label>
             <input
+              id="num-children"
               type="number"
               min="1"
               value={numChildren}
@@ -264,7 +285,9 @@ function Form() {
           />
         ) : null}
       </fieldset>
-      <h4 style={{color: 'red'}}>Please do not click the Submit button more than once.</h4>
+      <h4 style={{ color: 'red' }}>
+        Please do not click the Submit button more than once.
+      </h4>
       <button>Submit</button>
 
       {received === 'Yes' ? applicationAccepted() : null}
