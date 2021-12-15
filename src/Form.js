@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import MailingAddressBlock from './MailingAddressBlock'
 import { useLocalStorage } from './useLocalStorage'
 
@@ -109,17 +109,7 @@ function Form() {
       </h4>
     )
   }
-  useEffect(() => {}, [
-    email,
-    firstName,
-    middleName,
-    lastName,
-    dob,
-    spouse,
-    spouseFirstName,
-    spouseMiddleName,
-    spouseLastName,
-  ])
+
 
   return (
     <form onSubmit={handleOnSubmit}>
